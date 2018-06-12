@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>목록</title>
+<style>
+    html, body, div, span,
+    h1, h2, h3, h4, h5, h6, p,
+    a, em, img, strong,
+    dl, dt, dd, ol, ul, li{
+        margin: 0;
+        padding: 0;
+        border: 0;
+        font-size: 12px;
+    }
+    html,body{
+        height: 100%;
+    }
+    ol, ul {
+        list-style: none;
+    }
+    .blind{
+        overflow: hidden;
+        position: absolute;
+        clip: rect( 0 0 0 0);
+        width: 1px;
+        height: 1px;
+        margin: -1px;
+    }
+    button {
+        padding: 0;
+        margin: 0;
+        border: 0;
+    }
+    .ellipse {
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow-x: hidden;
+
+    }
+
+    .wrap{
+        position: relative;
+        height: 100%;
+        background-color: #f2f2f2;
+        overflow: hidden;
+    }
+    .wrap_left {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        overflow-x: hidden;
+        overflow-y: auto;
+
+        background-color:lightgray;
+    }
+    .wrap_left .btn_center {
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 3px;
+        height: 100%;
+        cursor: col-resize;
+        background-color: red;
+    }
+    .list_article {
+        position: relative;
+        border-bottom: 1px solid gray;
+    }
+    .list_article:hover {
+        background-color: lightyellow;        
+    }
+    .list_article.select, .list_article.select:hover {
+        background-color: yellow;
+    }
+    .list_article[data-status="delete"] {
+        display: none;
+    }
+    .list_article a {
+        display: block;
+        padding: 10px 0;        
+        width: 86%;
+        color: #000;
+    }
+
+    .mail_title{
+        padding-right: 70px;
+        padding-left: 10px;
+    }
+    .list_article_top .user_name {
+        display: inline-block;
+        max-width: 50%;
+        line-height: 20px;
+        vertical-align: top;
+        padding-left: 10px;
+
+    }
+    .list_article_top .send_date {
+        float: right;
+        padding-right: 70px;
+        line-height: 20px;
+        vertical-align: top;
+    }
+    .btn_list_move {
+        position: absolute;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        width: 30px;
+        cursor:move;
+    }
+    .btn_mail_delete {
+        position: absolute;
+        top: 10px;
+        right:40px;
+
+        width: 20px;
+        height: 20px;
+        background-color: gray;
+        vertical-align: top;
+    }
+    .btn_mail_delete:active {
+        background-color: lightcoral;        
+    }
+    .wrap_right {
+        display: inline-block;
+        width: 100%;
+        height: 100%;
+        overflow-y: auto;
+        box-sizing: border-box;
+
+        background-color: gray;
+    }
+    .wrap_left_top {
+        padding-top: 20px;
+
+    }
+    .wrap_right .user_name {
+        display: inline-block;
+        max-width: 60%;
+        padding-left: 10px;
+    }
+    .send_date {
+        float:right;
+
+    }
+    .wrap_right .mail_title{
+        padding: 10px;
+
+    }
+    .content_bottom{
+        padding: 0 10px;
+        white-space: pre-line;
+    }
+</style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="wrap_left" style="width: 500px">
+            <ul class="list_wrap">
+                <li class="list_article sellect">
+                    <a href="#"></a>
+                    <div class="list_article_top">
+                        <p class="user_name ellipse">작성작 이름작성작 이름작성작 이름작성작 이름작성작 이름작성작 이름작성작 이름작성작 이름작성작 이름작성작 이름작성작 이름작성작 이름작성작 이름</p>
+                        <p class="send_date">2018.00.00</p>
+                        <button class="btn_mail_delete"><span class="blind">삭제</span></button>
+                    </div>
+                    <div class="list_article_botton">
+                        <p class="mail_title ellipse">메일 제목메일 제목메일 제목메일 제목메일 제목메일 제목메일 제목메일 제목메일 제목메일 제목메일 제목메일 제목메일 제목메일 제목메일 제목</p>
+                    </div>
+                    <button type="button" class="btn_list_move"><span class="blind">이동버튼</span></button>
+                </li>
+            </ul>
+
+            <button class="btn_center"><span class="blind">좌우 비율 변경</span></button>
+        </div>
+
+        <div class="wrap_right" style="padding-left: 500px">
+            <div class="content_top">
+                <p class="user_name ellipse">작성작 이름작성작 이름작성작 이름작성작 이름작성작 이름작성작 이름작성작 이름작성작 이름작성작 이름작성작 이름작성작 이름작성작 이름작성작 이름</p>
+                <p class="send_date">2018.00.00</p>
+                <h1 class="mail_title ellipse">메일 제목메일 제목메일 제목메일 제목메일 제목메일 제목메일 제목메일 제목메일 제목메일 제목메일 제목메일 제목메일 제목메일 제목메일 제목</h1>
+            </div>
+            <div class="content_bottom">
+                메일 본문메일 본문메일 본문메일 본문메일 본문메일 본문메일 본문메일 본문메일 본문메일 본문메일 본문메일 본문메일 본문메일 본문메일 본문메일 본문메일 본문메일 본문메일 본문메일 본문메일 본문메일 본문메일 본문메일 본문메일 본문메일 본문메일 본문메일 본문메일 본문
+            </div>
+        </div>
+    </div>
+
+    <script src="data/emailData.js"></script>
+    <script src="js/noteStorageManager.js"></script>
+    <script src="js/noteManager.js"></script>
+    <script src="js/noteListView.js"></script>
+    <script src="js/noteContentView.js"></script>
+    <script src="index.js"></script>
+</body>
+</html>
